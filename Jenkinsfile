@@ -15,5 +15,13 @@ thanks
 Karthik''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'karword@gmail.com'
 
   }
+  stage('Slack Notification'){
+  slackSend baseUrl: 'https://hooks.slack.com/services/',
+    channel: '#jenkins-pipeline-demo',
+    color: 'good', 
+    message: 'welcome to Slack,Jenkins!',
+    teamDomain: 'agencybill',
+    tokenCredentialId: 'slack-demo'
 
+  }
 }
